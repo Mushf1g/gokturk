@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Göktürk</h1>
+      <div>
+        <input type="text" placeholder="Ad yazın..." class="myInput" />
+      </div>
+      <button class="change">Çevir &#8646;</button>
+      <p class="result">nəticə</p>
+      <span
+        >Əlifbaya baxmaq üçün
+        <a href="letters.html"><button>keçid</button></a> edin.</span
+      >
+
+      <div class="footer">
+        <p>©2023 Developed by <a href="https://www.linkedin.com/in/mushfig94/" target="_blank">Mushfig</a></p>
+      </div>
+    </section>
+
+    <script>
+      
+      function herfler(metn) {
+        const cevrilenherfler = {
+          a: "𐰀",
+          b: "𐰋",
+          c: "𐰲",
+          d: "𐰓",
+          e: "𐰀",
+          f: "𐰯",
+          g: "𐰏",
+          h: "𐰚",
+          i: "𐰃",
+          ı: "𐰃",
+          j: "𐱁",
+          k: "𐰚",
+          l: "𐰠",
+          m: "𐰢",
+          n: "𐰤",
+          o: "𐰆",
+          p: "𐰯",
+          q: "𐰴",
+          r: "𐰼",
+          s: "𐰾",
+          t: "𐱅",
+          u: "𐰆",
+          v: "𐰋",
+          x: "𐰴",
+          y: "𐰘",
+          z: "𐰔",
+          ü: "𐰇",
+          ö: "𐰇",
+          ə: "𐰀",
+          ğ: "𐰏",
+          ç: "𐰲",
+          ş: "𐱁",
+
+          " ": ":",
+
+          ng: "𐰭",
+          iç: "𐰱",
+          nç: "𐰨",
+          ny: "𐰪",
+          nd: "𐰦",
+          ld: "𐰡",
+          ik: "𐰶",
+          ok: "𐰸",
+          ük: "𐰰",
+        };
+
+        let netice = "";
+        let i = 0;
+
+        while (i < metn.length) {
+          let herf = metn[i];
+          let ikiherfli = herf + metn[i + 1];
+
+          if (cevrilenherfler.hasOwnProperty(ikiherfli)) {
+            netice += cevrilenherfler[ikiherfli];
+            i += 2; // İki harfli özel durumu işlediğimiz için iki adım ileri git
+          } else if (herf in cevrilenherfler) {
+            if (herf.length === 1) {
+              netice += cevrilenherfler[herf];
+            } else {
+              netice += herf;
+            }
+            i++;
+          } else {
+            netice += herf;
+            i++;
+          }
+        }
+
+        return netice;
+      }
+
+      document.querySelector(".change").addEventListener("click", function () {
+        const inputMetn = document
+          .querySelector(".myInput")
+          .value.toLowerCase();
+        const cevrilmisMetn = herfler(inputMetn);
+
+        document.querySelector(".result").textContent = cevrilmisMetn;
+      });
+    </script>
+  </body>
+</html>
