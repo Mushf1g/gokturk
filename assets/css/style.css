@@ -120,6 +120,7 @@ h1{
     color: aliceblue;
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
+    height: 100%;
     /* background-image: url(../image/Flag_of_the_Organization_of_Turkic_States.svg.png); */
 }
 .letters a{
@@ -158,7 +159,6 @@ h1{
     width: 100%;
     height: 100%;
     background-image: url(../image/Flag_of_the_Organization_of_Turkic_States.svg.png);
-    background-image: url(../image/Flag_of_the_Organization_of_Turkic_States.svg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -167,4 +167,3 @@ h1{
 .homepage{
     cursor: pointer;
 }
-
