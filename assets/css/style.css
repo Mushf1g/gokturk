@@ -12,7 +12,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: rgba(0, 171, 194, 1);
+    background-color: rgba(0, 171, 194);
 
 }
 /* .bg{
@@ -71,8 +71,15 @@ h1{
     cursor: pointer;
     /* box-shadow: #00AEC4 0px 0px 8px; */
     background-color: transparent;
-    color: aliceblue;
+    color: aliceblue !important;
 }
+#change{
+    font-size: 22px;
+    cursor: pointer;
+    /* box-shadow: #00AEC4 0px 0px 8px; */
+    color: aliceblue !important; 
+}
+
 .result{
     background-color: transparent;
     color: aliceblue;
@@ -84,12 +91,12 @@ h1{
     text-align: center;
     border-radius: 5px;
 }
-span{
+.alp1{
     color: aliceblue;
     font-size: 12px;
     max-width: 500px;
     font-family: sans-serif;
-    opacity: 0.6;
+    /* opacity: 0.6; */
     margin-top: 40px;
     text-shadow: 1px 1px black;
 }
@@ -112,6 +119,8 @@ span{
     padding: 15px;
     color: aliceblue;
     background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    /* background-image: url(../image/Flag_of_the_Organization_of_Turkic_States.svg.png); */
 }
 .letters a{
     color: aliceblue;
@@ -119,3 +128,43 @@ span{
     transition: all .3s ease-in-out;
     text-decoration: none;
 }
+.title{
+    text-decoration: none;
+}
+
+
+.langs{
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    font-size: 16px;
+    background-color: transparent;
+    color: aliceblue;
+}
+.langs option {
+    font-size: 16px;
+    background-color: #0C454E;
+    color: aliceblue;
+}
+
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* transform: translate(-50%, -50%); */
+    width: 100%;
+    height: 100%;
+    background-image: url(../image/Flag_of_the_Organization_of_Turkic_States.svg.png);
+    background-image: url(../image/Flag_of_the_Organization_of_Turkic_States.svg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: rgba(0, 171, 194);
+}
+.homepage{
+    cursor: pointer;
+}
+

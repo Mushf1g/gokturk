@@ -5,28 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Göktürk</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="./assets/image/favicon.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <section>
-      <h1>Göktürk</h1>
+      <select class="langs" onchange="dilDegistir()" id="dilSecim">
+        <option value="az">az</option>
+        <option value="tr">tr</option>
+        <option value="uz">uz</option>
+        <option value="kz">kz</option>
+        <option value="tm">tm</option>
+        <option value="kg">kg</option>
+      </select>
+
+      <a href="index.html" class="title"><h1 id="title">Göytürk</h1></a>
       <div>
         <input type="text" placeholder="Ad yazın..." class="myInput" />
       </div>
-      <button class="change">Çevir &#8646;</button>
+      <button class="change"><span id="change">Çevir</span> &#8646;</button>
       <p class="result">nəticə</p>
-      <span
-        >Əlifbaya baxmaq üçün
-        <a href="letters.html"><button>keçid</button></a> edin.</span
-      >
+
+      <span class="alp1">
+        <span class="alp">Əlifbaya baxmaq üçün</span>
+        <a><button class="kecid">keçid</button></a>
+        <span class="alp2">edin</span>
+
+        <div id="popup">
+          
+          <div class="letters">
+            <a onclick="kapatPopup()" class="homepage">Əsas səhifə</a>
+            <p>A - 𐰀</p>
+            <p>B - 𐰋</p>
+            <p>C - 𐰲</p>
+            <p>D - 𐰓</p>
+            <p>E - 𐰀</p>
+            <p>F - 𐰯</p>
+            <p>G - 𐰏</p>
+            <p>H - 𐰚</p>
+            <p>I - 𐰃</p>
+            <p>ı - 𐰃</p>
+            <p>J - 𐱁</p>
+            <p>K - 𐰚</p>
+            <p>L - 𐰠</p>
+            <p>M - 𐰢</p>
+            <p>N - 𐰤</p>
+            <p>O - 𐰆</p>
+            <p>P - 𐰯</p>
+            <p>Q - 𐰴</p>
+            <p>R - 𐰼</p>
+            <p>S - 𐰾</p>
+            <p>T - 𐱅</p>
+            <p>U - 𐰆</p>
+            <p>V - 𐰋</p>
+            <p>X - 𐰴</p>
+            <p>Y - 𐰘</p>
+            <p>Z - 𐰕</p>
+            <p>Ü - 𐰇</p>
+            <p>Ö - 𐰇</p>
+            <p>Ə - 𐰀</p>
+            <p>Ğ - 𐰏</p>
+            <p>Ç - 𐰲</p>
+            <p>Ş - 𐱁</p>
+            <p>NG - 𐰭</p>
+            <p>İÇ - 𐰱</p>
+            <p>NÇ - 𐰨</p>
+            <p>NY - 𐰪</p>
+            <p>ND - 𐰦</p>
+            <p>LD - 𐰡</p>
+            <p>IK - 𐰶</p>
+            <p>OK - 𐰸</p>
+            <p>ÜK - 𐰰</p>
+    
+            <div class="footer">
+                <p>©2023 Developed by <a href="https://www.linkedin.com/in/mushfig94/" target="_blank">Mushfig</a></p>
+            </div>
+        </div>
+
+          <!-- <button onclick="kapatPopup()">Kapat</button> -->
+        </div>
+      </span>
 
       <div class="footer">
-        <p>©2023 Developed by <a href="https://www.linkedin.com/in/mushfig94/" target="_blank">Mushfig</a></p>
+        <p>
+          ©2023 Developed by
+          <a href="https://www.linkedin.com/in/mushfig94/" target="_blank"
+            >Mushfig</a
+          >
+        </p>
       </div>
     </section>
 
     <script>
-      
+      "use strict";
+
       function herfler(metn) {
         const cevrilenherfler = {
           a: "𐰀",
@@ -73,6 +148,51 @@
           ik: "𐰶",
           ok: "𐰸",
           ük: "𐰰",
+
+          // kiril elifbasi
+          а: "𐰀",
+          б: "𐰋",
+          ц: "𐰲",
+          д: "𐰓",
+          е: "𐰀",
+          ф: "𐰯",
+          г: "𐰏",
+          х: "𐰚",
+          и: "𐰃",
+          й: "𐰃",
+          ж: "𐱁",
+          к: "𐰚",
+          л: "𐰠",
+          м: "𐰢",
+          н: "𐰤",
+          о: "𐰆",
+          п: "𐰯",
+          к: "𐰏",
+          р: "𐰚",
+          с: "𐰾",
+          т: "𐱅",
+          у: "𐰆",
+          в: "𐰋",
+          х: "𐰴",
+          й: "𐰘",
+          з: "𐰔",
+          ю: "𐰇",
+          я: "𐰇",
+          ə: "𐰀",
+          г: "𐰏",
+          ч: "𐰲",
+          ш: "𐱁",
+
+          ng: "𐰭",
+          ич: "𐰱",
+          нч: "𐰨",
+          ны: "𐰪",
+          нд: "𐰦",
+          лд: "𐰡",
+          ик: "𐰶",
+          ок: "𐰸",
+          юк: "𐰰",
+
         };
 
         let netice = "";
@@ -84,7 +204,7 @@
 
           if (cevrilenherfler.hasOwnProperty(ikiherfli)) {
             netice += cevrilenherfler[ikiherfli];
-            i += 2; // İki harfli özel durumu işlediğimiz için iki adım ileri git
+            i += 2;
           } else if (herf in cevrilenherfler) {
             if (herf.length === 1) {
               netice += cevrilenherfler[herf];
@@ -109,6 +229,114 @@
 
         document.querySelector(".result").textContent = cevrilmisMetn;
       });
+
+      // Sayfa yüklendiğinde kaydedilmiş dil bilgisini kontrol et
+      document.addEventListener("DOMContentLoaded", function () {
+        var kaydedilmisDil = localStorage.getItem("secilenDil");
+
+        // Kaydedilmiş dil varsa, dil seçeneğini ona göre ayarla
+        if (kaydedilmisDil) {
+          var dilSecimi = document.getElementById("dilSecim");
+          dilSecimi.value = kaydedilmisDil;
+          dilDegistir(); // Dil değişikliğini tetikle
+        }
+      });
+
+      function dilDegistir() {
+        let dilSecimi = document.getElementById("dilSecim");
+
+        let selectElement = document.querySelector(".langs");
+        let titleElement = document.getElementById("title");
+        let changeElement = document.querySelector("#change");
+        let inputElement = document.querySelector(".myInput");
+        let resultElement = document.querySelector(".result");
+        let alpElement = document.querySelector(".alp");
+        let kecidElement = document.querySelector(".kecid");
+        let edinElement = document.querySelector(".alp2");
+        let homeElement = document.querySelector(".homepage");
+
+        if (selectElement.value === "tr") {
+          titleElement.textContent = "Göktürk";
+          changeElement.textContent = "Dönüştür";
+          inputElement.placeholder = "İsim yaz...";
+          resultElement.textContent = "sonuç";
+          alpElement.textContent = "Alfabeyi görmek için";
+          kecidElement.textContent = "tıklayın";
+          edinElement.textContent = "";
+          homeElement.textContent = "Ana sayfa";
+        } else if (selectElement.value === "uz") {
+          titleElement.textContent = "Turk";
+          changeElement.textContent = "Aylantir";
+          inputElement.placeholder = "Ism yozing...";
+          resultElement.textContent = "natija";
+          alpElement.textContent = "Alifboni korish uchun ";
+          kecidElement.textContent = "bosing";
+          edinElement.textContent = "";
+          homeElement.textContent = "Bosh Sahifa";
+        } else if (selectElement.value === "kz") {
+          titleElement.textContent = "Түрік";
+          changeElement.textContent = "Түрлендіру";
+          inputElement.placeholder = "Атын жаз...";
+          resultElement.textContent = "нәтиже";
+          alpElement.textContent = "Әліпбиді көру үшін ";
+          kecidElement.textContent = "басыңыз";
+          edinElement.textContent = "";
+          homeElement.textContent = "Басты бет";
+        } else if (selectElement.value === "tm") {
+          titleElement.textContent = "Türk";
+          changeElement.textContent = "Öwür";
+          inputElement.placeholder = "Ady ýazyň...";
+          resultElement.textContent = "netije";
+          alpElement.textContent = "Elipbiýi görmek üçin ";
+          kecidElement.textContent = "basyň";
+          edinElement.textContent = "";
+          homeElement.textContent = "Baş Sahypa";
+        } else if (selectElement.value === "kg") {
+          titleElement.innerHTML = "Түрк";
+          changeElement.textContent = "Айландыр";
+          inputElement.placeholder = "Атын жаз...";
+          resultElement.textContent = "натыйжа";
+          alpElement.textContent = "Алфавитти көрүү үчүн ";
+          kecidElement.textContent = "басыңыз";
+          edinElement.textContent = "";
+          homeElement.textContent = "Башкы бет";
+        } else {
+          // Set the default text for other languages
+          titleElement.textContent = "Göytürk";
+          changeElement.textContent = "Çevir";
+          inputElement.placeholder = "Ad yazın...";
+          resultElement.textContent = "nəticə";
+          alpElement.textContent = "Əlifbaya baxmaq üçün  ";
+          kecidElement.textContent = "keçid";
+          homeElement.textContent = "Əsas səhifə";
+        }
+
+        // Seçilen dili tarayıcı hafızasına kaydet
+        localStorage.setItem("secilenDil", dilSecimi.value);
+      }
+
+
+
+      // HTML içindeki alp1 sınıfı elemanını seç
+      var alp1Element = document.querySelector('.kecid');
+
+      // alp1 sınıfı elemanına tıklanınca popup'ı göster
+      alp1Element.addEventListener('click', function() {
+          acPopup();
+      });
+
+      // Popup'ı açan fonksiyon
+      function acPopup() {
+          // Popup'ı görünür yap
+          document.getElementById('popup').style.display = 'block';
+      }
+
+      // Popup'ı kapatan fonksiyon
+      function kapatPopup() {
+          // Popup'ı gizle
+          document.getElementById('popup').style.display = 'none';
+      }
+
     </script>
   </body>
 </html>
